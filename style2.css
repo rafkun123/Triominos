@@ -1,0 +1,135 @@
+* {
+  background-color: #7886ab;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 28px;
+  font-weight: bold;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.header .menu {
+  margin: 5px 30px 5px 5px;
+}
+.header .menu:first-child {
+  margin-left: 20px;
+}
+
+.playerWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.playerWrapper .playerTable {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 24px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.playerWrapper .playerTable .playerDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+}
+.playerWrapper .playerTable .playerDiv .playerName {
+  width: 75px;
+}
+.playerWrapper .playerTable .playerDiv .dot {
+  width: 35px;
+}
+.playerWrapper .playerTable .playerDiv .greenDot {
+  background-color: yellowgreen;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 10px;
+  -webkit-animation: blink 2s infinite;
+          animation: blink 2s infinite;
+}
+.playerWrapper .playerTable .playerDiv .lastScore {
+  margin-left: 75px;
+  width: 60px;
+}
+.playerWrapper .playerTable .playerDiv .score {
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: 65px;
+}
+
+.display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px;
+  background-color: #fff;
+  height: 60px;
+  border-radius: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 15px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.buttonWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.buttonWrapper button {
+  margin: 5px 10px;
+  width: 110px;
+  height: 90px;
+  font-size: 30px;
+  border-radius: 15px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.twoButtons button {
+  width: 220px;
+}
+
+@-webkit-keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style2.css.map */
