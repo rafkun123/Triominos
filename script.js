@@ -1,86 +1,21 @@
-const one = document.querySelector(".plusOne")
-const two = document.querySelector(".plusTwo")
-const three = document.querySelector(".plusThree")
-const four = document.querySelector(".plusFour")
-const five = document.querySelector(".plusFive")
 const dodaj = document.querySelector(".dodaj")
 const display = document.querySelector(".display")
-const clear = document.querySelector(".clear")
-const win = document.querySelector('.win')
-const most = document.querySelector('.most')
-const hex = document.querySelector('.hex')
-const dhex = document.querySelector('.dhex')
-const mfive = document.querySelector('.minusFive')
-const mTF = document.querySelector('.minusTF')
-
 const score = document.querySelectorAll('.score')
 const playerDiv = document.querySelectorAll('.playerDiv')
+const startGame = document.querySelector('.startGame')
+const playersCount = document.querySelector('.playersCount')
+const buttons = document.querySelectorAll('button')
 
-AddOne = () => {
-    let zxc = parseInt(display.innerHTML)
-    display.innerHTML = zxc + 1
-}
-
-AddTwo = () => {
-    let zxc = parseInt(display.innerHTML)
-    display.innerHTML = zxc + 2
-}
-
-AddThree = () => {
-    let zxc = parseInt(display.innerHTML)
-    display.innerHTML = zxc + 3
-}
-
-AddFour = () => {
-    let zxc = parseInt(display.innerHTML)
-    display.innerHTML = zxc + 4
-}
-
-AddFive = () => {
-    let zxc = parseInt(display.innerHTML)
-    display.innerHTML = zxc + 5
-}
-
-AddWin = () => {
-    let zxc = parseInt(display.innerHTML)
-    display.innerHTML = zxc + 25
-}
-
-AddMost = () => {
-    let zxc = parseInt(display.innerHTML)
-    display.innerHTML = zxc + 40
-}
-
-AddHex = () => {
-    let zxc = parseInt(display.innerHTML)
-    display.innerHTML = zxc + 50
-}
-
-AddDHex = () => {
-    let zxc = parseInt(display.innerHTML)
-    display.innerHTML = zxc + 60
-}
-
-MinusFive = () => {
-    let zxc = parseInt(display.innerHTML)
-    display.innerHTML = zxc - 5
-}
-
-MinusTF = () => {
-    let zxc = parseInt(display.innerHTML)
-    display.innerHTML = zxc -25
-}
-
-next = () => {
-    for (i = 0; 1 < 4; i++){
-        if (playerDiv[i] == playerDiv[3]){
+Next = () => {
+    for (i = 0; i < playerDiv.length; i++){
+        if (playerDiv[i] == playerDiv[playersCount.value-1]){
             playerDiv[0].firstElementChild.classList.add('greenDot')
-            playerDiv[3].firstElementChild.classList.remove('greenDot')
-            playerDiv[3].lastElementChild.innerHTML = parseInt(display.innerHTML) + parseInt(playerDiv[3].lastElementChild.innerHTML)
-            playerDiv[3].lastElementChild.previousElementSibling.innerHTML = display.innerHTML
+            playerDiv[playersCount.value-1].firstElementChild.classList.remove('greenDot')
+            playerDiv[playersCount.value-1].lastElementChild.innerHTML = parseInt(display.innerHTML) + parseInt(playerDiv[playersCount.value-1].lastElementChild.innerHTML)
+            playerDiv[playersCount.value-1].lastElementChild.previousElementSibling.innerHTML = display.innerHTML
             display.innerHTML = 0
             break
-        }
+        } 
         else if (playerDiv[i].firstElementChild.classList.contains('greenDot')){
             playerDiv[i].nextElementSibling.firstElementChild.classList.add('greenDot')
             playerDiv[i].firstElementChild.classList.remove('greenDot')
@@ -92,20 +27,57 @@ next = () => {
     }
 }
 
-clearDisplay = () => {
-    display.innerHTML = 0
+StartNewGame = () => {
+    if (parseInt(playersCount.value) >= 2 && parseInt(playersCount.value) <= 4 ){
+        startGame.parentElement.style.display = "none"
+    } else {
+        alert('Podaj prawidłową liczbę graczy (2-4)')
+        playersCount.value = ''
+    }
+    
 }
 
-one.addEventListener('click', AddOne)
-two.addEventListener('click', AddTwo)
-three.addEventListener('click', AddThree)
-four.addEventListener('click', AddFour)
-five.addEventListener('click', AddFive)
-win.addEventListener('click', AddWin)
-most.addEventListener('click', AddMost)
-hex.addEventListener('click', AddHex)
-dhex.addEventListener('click', AddDHex)
-mfive.addEventListener('click', MinusFive)
-mTF.addEventListener('click', MinusTF)
-dodaj.addEventListener('click', next)
-clear.addEventListener('click', clearDisplay)
+buttons.forEach(button=>{
+    button.addEventListener('click', e =>{
+        let showScore = parseInt(display.innerHTML)
+        if(e.target == buttons[1]){
+            display.innerHTML = showScore + 1
+        } 
+        else if(e.target == buttons[2]){
+            display.innerHTML = showScore + 2
+        }
+        else if(e.target == buttons[3]){
+            display.innerHTML = showScore + 3
+        }
+        else if(e.target == buttons[4]){
+            display.innerHTML = showScore + 4
+        }
+        else if(e.target == buttons[5]){
+            display.innerHTML = showScore + 5
+        }
+        else if(e.target == buttons[6]){
+            display.innerHTML = showScore + 25
+        }
+        else if(e.target == buttons[7]){
+            display.innerHTML = showScore + 40
+        }
+        else if(e.target == buttons[8]){
+            display.innerHTML = showScore + 50
+        }
+        else if(e.target == buttons[9]){
+            display.innerHTML = showScore + 60
+        }
+        else if(e.target == buttons[10]){
+            display.innerHTML = showScore -5
+        }
+        else if(e.target == buttons[11]){
+            display.innerHTML = -25
+        }
+        else if(e.target == buttons[12]){
+            display.innerHTML = 0
+        }
+    })
+})
+
+dodaj.addEventListener('click', Next)
+startGame.addEventListener('click', StartNewGame)
