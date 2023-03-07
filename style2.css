@@ -1,9 +1,66 @@
 * {
-  background-color: #7886ab;
+  background-color: #b5afaf;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+.newGame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80vh;
+  width: 100vw;
+  z-index: 2;
+}
+.newGame .players {
+  font-size: 32px;
+  margin: 20px 10px;
+  font-weight: bold;
+}
+.newGame .playersCount {
+  font-size: 32px;
+  width: 80vw;
+  border-radius: 5px;
+}
+.newGame .startGame {
+  margin: 20px 10px;
+  font-size: 24px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#dacaca), to(#938383));
+  background-image: linear-gradient(-180deg, #dacaca 0%, #938383 100%);
+  border-radius: 0.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  width: 80%;
+  border: 0;
+  cursor: pointer;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
 }
 
 .header {
@@ -107,12 +164,30 @@
 }
 .buttonWrapper button {
   margin: 5px 10px;
-  width: 110px;
-  height: 60px;
-  font-size: 30px;
-  border-radius: 15px;
-  z-index: 1;
+  font-size: 24px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#928c8c), to(#d0c9c9));
+  background-image: linear-gradient(-180deg, #928c8c 0%, #d0c9c9 100%);
+  border-radius: 0.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem 1.75rem;
+  text-decoration: none;
+  width: 100%;
+  border: 0;
   cursor: pointer;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
 }
 
 .twoButtons button {
